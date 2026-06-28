@@ -30,33 +30,6 @@ header p {
     color: #a6f0c6;
 }
 
-/* Nav */
-nav {
-    background: #2d8a50;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-}
-
-nav li {
-    margin: 0 20px;
-}
-
-nav a {
-    display: block;
-    color: white;
-    text-decoration: none;
-    padding: 18px 0;
-    font-weight: bold;
-    transition: .3s;
-}
-
-nav a:hover {
-    color: #a6f0c6;
-}
 
 /* Hero */
 .hero {

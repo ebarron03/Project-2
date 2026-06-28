@@ -1,34 +1,33 @@
-version: "3.9"
+version: "3.8"
 
 services:
 
-  proxy:
-    build: ./proxy
-    ports: 
-      - "80:80"
-    depends_on:
-      - hq
-      - cloud
-      - security
-      - customer
-      - research
-
   hq: 
-    build: ./hq
+    image: my-nginx-container
     container_name: hq
+    ports:
+      - "8081:80"
 
   cloud:
-    build: ./cloud
+    image: my-nginx-container
     container_name: cloud
+    ports:
+      - "8082:80"
 
   security:
-    build: ./security
+    image: my-nginx-container
     container_name: security
+    ports:
+      - "8083:80"
 
   customer:
-    build: ./customer
+    image: my-nginx-container
     container_name: customer
+    ports:
+      - "8084:80"
 
   research:
-    build: ./research
+    image: my-nginx-container
     container_name: research
+    ports:
+      - "8085:80"

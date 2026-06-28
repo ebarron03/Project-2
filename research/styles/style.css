@@ -41,36 +41,6 @@ header p {
     color: #d2b3ff;
 }
 
-/* =========================
-   Navigation
-========================= */
-
-nav {
-    background: #6b3fb5;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-}
-
-nav li {
-    margin: 0 20px;
-}
-
-nav a {
-    display: block;
-    color: white;
-    text-decoration: none;
-    padding: 18px 0;
-    font-weight: bold;
-    transition: 0.3s ease;
-}
-
-nav a:hover {
-    color: #d2b3ff;
-}
 
 /* =========================
    Hero Section
