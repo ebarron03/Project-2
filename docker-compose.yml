@@ -45,3 +45,7 @@ services:
         - ./research:/usr/share/nginx/html:ro
       networks:
         - vertex-network
+
+networks:
+  vertex-network:
+    driver: bridge
