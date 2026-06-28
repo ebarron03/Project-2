@@ -1,3 +1,7 @@
+/* =========================
+   Base Reset
+========================= */
+
 * {
     margin: 0;
     padding: 0;
@@ -17,28 +21,28 @@ body {
     margin: auto;
 }
 
-/* Header */
+/* =========================
+   Header
+========================= */
 
 header {
-    background: #143d6b;
+    background: #7a1f1f;
     color: white;
     padding: 40px 0;
     text-align: center;
 }
 
-header h1 {
-    font-size: 3rem;
-}
-
 header p {
     margin-top: 10px;
-    color: #d9e8ff;
+    color: #ffb3b3;
 }
 
-/* Navigation */
+/* =========================
+   Navigation
+========================= */
 
 nav {
-    background: #1e4f85;
+    background: #a52a2a;
 }
 
 nav ul {
@@ -57,14 +61,16 @@ nav a {
     text-decoration: none;
     padding: 18px 0;
     font-weight: bold;
-    transition: .3s;
+    transition: 0.3s ease;
 }
 
 nav a:hover {
-    color: #9fd3ff;
+    color: #ffb3b3;
 }
 
-/* Hero */
+/* =========================
+   Hero Section
+========================= */
 
 .hero {
     text-align: center;
@@ -73,7 +79,7 @@ nav a:hover {
 
 .hero h2 {
     font-size: 2.7rem;
-    color: #143d6b;
+    color: #7a1f1f;
     margin-bottom: 25px;
 }
 
@@ -83,31 +89,39 @@ nav a:hover {
     font-size: 1.2rem;
 }
 
+/* =========================
+   Buttons
+========================= */
+
 .button {
     display: inline-block;
     margin-top: 35px;
     padding: 14px 30px;
-    background: #143d6b;
+    background: #7a1f1f;
     color: white;
     text-decoration: none;
     border-radius: 6px;
-    transition: .3s;
+    transition: 0.3s ease;
 }
 
 .button:hover {
-    background: #1e4f85;
+    background: #a52a2a;
 }
 
-/* Section Titles */
+/* =========================
+   Section Titles
+========================= */
 
 .section-title {
     text-align: center;
     font-size: 2.2rem;
-    color: #143d6b;
+    color: #7a1f1f;
     margin-bottom: 40px;
 }
 
-/* Feature Cards */
+/* =========================
+   Feature Cards
+========================= */
 
 .features {
     display: flex;
@@ -122,8 +136,8 @@ nav a:hover {
     background: white;
     padding: 30px;
     border-radius: 10px;
-    box-shadow: 0 5px 18px rgba(0, 0, 0, .12);
-    transition: transform .3s ease;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.12);
+    transition: transform 0.3s ease;
 }
 
 .card:hover {
@@ -131,11 +145,13 @@ nav a:hover {
 }
 
 .card h3 {
-    color: #143d6b;
+    color: #7a1f1f;
     margin-bottom: 15px;
 }
 
-/* About */
+/* =========================
+   About Section
+========================= */
 
 .about-text {
     max-width: 900px;
@@ -145,34 +161,13 @@ nav a:hover {
     padding-bottom: 80px;
 }
 
-/* Footer */
+/* =========================
+   Footer
+========================= */
 
 footer {
-    background: #143d6b;
+    background: #7a1f1f;
     color: white;
     text-align: center;
     padding: 25px;
-}
-
-/* Mobile */
-
-@media (max-width: 768px) {
-
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    nav li {
-        margin: 5px 0;
-    }
-
-    .hero h2 {
-        font-size: 2rem;
-    }
-
-    .features {
-        flex-direction: column;
-        align-items: center;
-    }
 }
