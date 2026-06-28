@@ -4,47 +4,52 @@ services:
   hq:
     image: my-nginx-container
     container_name: vertex-hq
-    ports: 8081:80
+    ports: 
+      - 8081:80
     volumes:
       - ./hq:/usr/share/nginx/html:ro
     networks:
       - vertex-network
 
-  cloud: 
+  cloud:
     image: my-nginx-container
     container_name: vertex-cloud
-    ports: 8082:80
+    ports: 
+      - 8082:80
     volumes:
       - ./cloud:/usr/share/nginx/html:ro
     networks:
       - vertex-network
     
-    security:
-      image: my-nginx-container
-      container_name: vertex-security
-      ports: 8083:80
-      volumes:
-        - ./security:/usr/share/nginx/html:ro
-      networks:
-        - vertex-network
+  security:
+    image: my-nginx-container
+    container_name: vertex-security
+    ports: 
+      - 8083:80
+    volumes:
+      - ./security:/usr/share/nginx/html:ro
+    networks:
+      - vertex-network
 
-    customer:
-      image: my-nginx-container
-      container_name: vertex-customer
-      ports: 8084:80
-      volumes:
-        - ./customer:/usr/share/nginx/html:ro
-      networks:
-        - vertex-network
+  customer:
+    image: my-nginx-container
+    container_name: vertex-customer
+    ports: 
+      - 8084:80
+    volumes:
+      - ./customer:/usr/share/nginx/html:ro
+    networks:
+      - vertex-network
 
-    research: 
-      image: my-nginx-container
-      container_name: vertex-research
-      ports: 8085:80
-      volumes:
-        - ./research:/usr/share/nginx/html:ro
-      networks:
-        - vertex-network
+  research: 
+    image: my-nginx-container
+    container_name: vertex-research
+    ports: 
+      - 8085:80
+    volumes:
+      - ./research:/usr/share/nginx/html:ro
+    networks:
+      - vertex-network
 
 networks:
   vertex-network:
