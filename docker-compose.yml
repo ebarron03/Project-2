@@ -1,33 +1,47 @@
 version: "3.8"
 
 services:
-
-  web1:
+  hq:
     image: my-nginx-container
-    container_name: vertex-web1
-    ports:
-      - "8081:80"
+    container_name: vertex-hq
+    ports: 8081:80
+    volumes:
+      - ./hq:/usr/share/nginx/html:ro
+    networks:
+      - vertex-network
 
-  web2:
+  cloud: 
     image: my-nginx-container
-    container_name: vertex-web2
-    ports:
-      - "8082:80"
+    container_name: vertex-cloud
+    ports: 8082:80
+    volumes:
+      - ./cloud:/usr/share/nginx/html:ro
+    networks:
+      - vertex-network
+    
+    security:
+      image: my-nginx-container
+      container_name: vertex-security
+      ports: 8083:80
+      volumes:
+        - ./security:/usr/share/nginx/html:ro
+      networks:
+        - vertex-network
 
-  web3:
-    image: my-nginx-container
-    container_name: vertex-web3
-    ports:
-      - "8083:80"
+    customer:
+      image: my-nginx-container
+      container_name: vertex-customer
+      ports: 8084:80
+      volumes:
+        - ./customer:/usr/share/nginx/html:ro
+      networks:
+        - vertex-network
 
-  web4:
-    image: my-nginx-container
-    container_name: vertex-web4
-    ports:
-      - "8084:80"
-
-  web5:
-    image: my-nginx-container
-    container_name: vertex-web5
-    ports:
-      - "8085:80"
+    research: 
+      image: my-nginx-container
+      container_name: vertex-research
+      ports: 8085:80
+      volumes:
+        - ./research:/usr/share/nginx/html:ro
+      networks:
+        - vertex-network
