@@ -2,33 +2,33 @@ version: "3.9"
 
 services:
 
-proxy:
-  build: ./proxy
-  ports: 
-    - "80:80"
-  depends_on:
-    - hq
-    - cloud
-    - security
-    - customer
-    - research
+  proxy:
+    build: ./proxy
+    ports: 
+      - "80:80"
+    depends_on:
+      - hq
+      - cloud
+      - security
+      - customer
+      - research
 
-hq: 
-  build: ./hq
-  container_name: hq
+  hq: 
+    build: ./hq
+    container_name: hq
 
-cloud:
-  build: ./cloud
-  container_name: cloud
+  cloud:
+    build: ./cloud
+    container_name: cloud
 
-security:
-  build: ./security
-  container_name: security
+  security:
+    build: ./security
+    container_name: security
 
-customer:
-  build: ./customer
-  container_name: customer
+  customer:
+    build: ./customer
+    container_name: customer
 
-research:
-  build: ./research
-  container_name: research
+  research:
+    build: ./research
+    container_name: research
