@@ -3,31 +3,31 @@ version: "3.8"
 services:
 
   hq: 
-    image: my-nginx-container
+    build: ./hq
     container_name: hq
     ports:
       - "8081:80"
 
   cloud:
-    image: my-nginx-container
+    build: ./cloud
     container_name: cloud
     ports:
       - "8082:80"
 
   security:
-    image: my-nginx-container
+    build: ./security
     container_name: security
     ports:
       - "8083:80"
 
   customer:
-    image: my-nginx-container
+    build: ./customer
     container_name: customer
     ports:
       - "8084:80"
 
   research:
-    image: my-nginx-container
+    build: ./research
     container_name: research
     ports:
       - "8085:80"
