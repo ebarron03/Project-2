@@ -1,56 +1,34 @@
-version: "3.8"
+version: "3.9"
 
 services:
-  hq:
-    image: my-nginx-container
-    container_name: vertex-hq
-    ports: 
-      - 8081:80
-    volumes:
-      - ./hq:/usr/share/nginx/html:ro
-    networks:
-      - vertex-network
 
-  cloud:
-    image: my-nginx-container
-    container_name: vertex-cloud
-    ports: 
-      - 8082:80
-    volumes:
-      - ./cloud:/usr/share/nginx/html:ro
-    networks:
-      - vertex-network
-    
-  security:
-    image: my-nginx-container
-    container_name: vertex-security
-    ports: 
-      - 8083:80
-    volumes:
-      - ./security:/usr/share/nginx/html:ro
-    networks:
-      - vertex-network
+proxy:
+  build: ./proxy
+  ports: 
+    - "80:80"
+  depends_on:
+    - hq
+    - cloud
+    - security
+    - customer
+    - research
 
-  customer:
-    image: my-nginx-container
-    container_name: vertex-customer
-    ports: 
-      - 8084:80
-    volumes:
-      - ./customer:/usr/share/nginx/html:ro
-    networks:
-      - vertex-network
+hq: 
+  build: ./hq
+  container_name: hq
 
-  research: 
-    image: my-nginx-container
-    container_name: vertex-research
-    ports: 
-      - 8085:80
-    volumes:
-      - ./research:/usr/share/nginx/html:ro
-    networks:
-      - vertex-network
+cloud:
+  build: ./cloud
+  container_name: cloud
 
-networks:
-  vertex-network:
-    driver: bridge
+security:
+  build: ./security
+  container_name: security
+
+customer:
+  build: ./customer
+  container_name: customer
+
+research:
+  build: ./research
+  container_name: research
